@@ -2,6 +2,9 @@
 
 <p>STECHの課題で制作したTo Do List アプリです。</p>
 <p>Herokuでデプロイしています。</p>
+<p>Masahiro Haradaさんの
+    <a href="https://www.hypertextcandy.com/laravel-tutorial-introduction/">入門Laravelチュートリアル</a>
+    を参考にさせていただきました。</p>
 
 <h1>実装済み機能</h1>
 <ol>
@@ -16,18 +19,13 @@
     <li>リマインド機能/li>
 </ol>
 
-<p>Masahiro Haradaさんの
-    <a href="https://www.hypertextcandy.com/laravel-tutorial-introduction/">入門Laravelチュートリアル</a>
-    を参考にさせていただきました。</p>
-
-
-# 使用言語
+## 使用言語
 <ol>
     <li>Laravel Framework 7.28.3</li>
     <li>PHP 7.2.33</li>
 </ol>
 
-# 開発環境
+## 開発環境
 <ol>
     <li>Vagrant</li>
     <li>Visual Studio Code</li>
