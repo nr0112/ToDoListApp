@@ -1,6 +1,7 @@
 # To Do List アプリ
 
 <p>STECHの課題で制作したTo Do List アプリです。</p>
+<p>Herokuでデプロイしています。</p>
 
 <h1>実装済み機能</h1>
 <ol>
@@ -21,13 +22,16 @@
 
 
 # 使用言語
-・Laravel Framework 7.28.3
-・PHP 7.2.33
+<ol>
+    <li>Laravel Framework 7.28.3</li>
+    <li>PHP 7.2.33</li>
+</ol>
 
 # 開発環境
-・Visual Studio Code
-・CentOS
-
+<ol>
+    <li>Vagrant</li>
+    <li>Visual Studio Code</li>
+</ol>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
