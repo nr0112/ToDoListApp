@@ -3,15 +3,17 @@
 **To Do List アプリです。**
 
 <h1>実装済み機能</h1>
-<p>タスク追加・編集・削除</p>
-<p>フォルダ追加・編集・削除</p>
-<p>ログイン認証・ログアウト</p>
+<p>- タスク追加・編集・削除</p>
+<p>- フォルダ追加・編集・削除</p>
+<p>- ログイン認証・ログアウト</p>
 
 <h1>実装予定の機能</h1>
-<p>カウントダウン</p>
-<p>リマインド</p>
+<p>- カウントダウン</p>
+<p>- リマインド</p>
 
-<p>Masahiro Haradaさんの<a href="https://www.hypertextcandy.com/laravel-tutorial-introduction/">入門Laravelチュートリアル</a>を参考にさせていただきました。</p>
+<p>Masahiro Haradaさんの
+    <a href="https://www.hypertextcandy.com/laravel-tutorial-introduction/">入門Laravelチュートリアル</a>
+    を参考にさせていただきました。</p>
 
 
 # 使用言語
