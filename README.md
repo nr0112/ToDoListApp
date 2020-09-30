@@ -1,3 +1,28 @@
+# To Do List アプリ
+
+**To Do List アプリです。**
+
+<h1>実装済み機能</h1>
+<p>タスク追加・編集・削除</p>
+<p>フォルダ追加・編集・削除</p>
+<p>ログイン認証・ログアウト</p>
+
+<h1>実装予定の機能</h1>
+<p>カウントダウン</p>
+<p>リマインド</p>
+
+<p>Masahiro Haradaさんの<a href="https://www.hypertextcandy.com/laravel-tutorial-introduction/">入門Laravelチュートリアル</a>を参考にさせていただきました。</p>
+
+
+# 使用言語
+・Laravel Framework 7.28.3
+・PHP 7.2.33
+
+# 開発環境
+・Visual Studio Code
+・CentOS
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
