@@ -1,15 +1,19 @@
 # To Do List アプリ
 
-**To Do List アプリです。**
+<p>STECHの課題で制作したTo Do List アプリです。</p>
 
 <h1>実装済み機能</h1>
-<p>- タスク追加・編集・削除</p>
-<p>- フォルダ追加・編集・削除</p>
-<p>- ログイン認証・ログアウト</p>
+<ol>
+    <li>タスクの追加・編集・削除機能</li>
+    <li>フォルダの追加・編集・削除機能</li>
+    <li>ログイン認証・ログアウト</li>
+</ol>
 
-<h1>実装予定の機能</h1>
-<p>- カウントダウン</p>
-<p>- リマインド</p>
+<h1>実装予定</h1>
+<ol>
+    <li>カウントダウン機能</li>
+    <li>リマインド機能/li>
+</ol>
 
 <p>Masahiro Haradaさんの
     <a href="https://www.hypertextcandy.com/laravel-tutorial-introduction/">入門Laravelチュートリアル</a>
