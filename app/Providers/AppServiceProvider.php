@@ -23,14 +23,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // 通信プロトコル
+        if (\App::environment('production')) {
+            \URL::forceScheme('https');
+        }
     }
 
-    // 通信プロトコル
-    public function boot()
-    {
-    if (\App::environment('production')) {
-        \URL::forceScheme('https');
-    }
+    
 }
 }
