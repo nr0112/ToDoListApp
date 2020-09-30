@@ -20,16 +20,16 @@
 </ul>
 
 ## 使用言語
-<ol>
-    <li>・Laravel Framework 7.28.3</li>
-    <li>・PHP 7.2.33</li>
-</ol>
+<ul>
+    <li>Laravel Framework 7.28.3</li>
+    <li>PHP 7.2.33</li>
+</ul>
 
 ## 開発環境
-<ol>
+<ul>
     <li>Vagrant</li>
     <li>Visual Studio Code</li>
-</ol>
+</ul>
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
