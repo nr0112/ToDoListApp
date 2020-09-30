@@ -6,14 +6,14 @@
     <a href="https://www.hypertextcandy.com/laravel-tutorial-introduction/">入門Laravelチュートリアル</a>
     を参考にさせていただきました。</p>
 
-<h1>実装済み機能</h1>
+##実装済み機能
 <ul>
     <li>・タスクの追加・編集・削除機能</li>
     <li>・フォルダの追加・編集・削除機能</li>
     <li>・ログイン認証・ログアウト</li>
 </ul>
 
-<h1>実装予定</h1>
+##実装予定
 <ul>
     <li>・カウントダウン機能</li>
     <li>・リマインド機能</li>
