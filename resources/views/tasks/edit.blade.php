@@ -26,17 +26,17 @@
               <div class="form-group">
                 <label for="title">タイトル</label>
                 <!-- old関数で直前の入力値を引き出す→ない場合は第2引数で$task->titleを引き出す -->
-                <input type="text" class="form-control" name="title" id="title"
-                       value="{{ old('title') ?? $task->title }}" />
+                <input type="text" class="form-control" name="title" id="title" value="{{ old('title') ?? $task->title }}" />
+              </div>
+              <div class="form-group">
+                <label for="contents">内容</label>
+                <input type="text" class="form-control" name="contents" id="contents" value="{{ old('contents') ?? $task->contents }}">
               </div>
               <div class="form-group">
                 <label for="status">状態</label>
                 <select name="status" id="status" class="form-control">
                   @foreach(\App\Task::STATUS as $key => $val)
-                    <option
-                        value="{{ $key }}"
-                        {{ $key == old('status', $task->status) ? 'selected' : '' }}
-                    >
+                    <option value="{{ $key }}" {{ $key == old('status', $task->status) ? 'selected' : '' }} >
                       {{ $val['label'] }}
                     </option>
                   @endforeach

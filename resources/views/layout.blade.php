@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>To Do List</title>
+  <title>いつかやることリスト</title>
   @yield('styles')
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 <header>
   <nav class="my-navbar">
-    <a class="my-navbar-brand" href="/">To Do List</a>
+    <a class="my-navbar-brand" href="/">いつかやることリスト</a>
     <div class="my-navbar-control">
     <!-- ログイン状態の確認-->
     @if(Auth::check())

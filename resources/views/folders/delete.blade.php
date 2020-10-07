@@ -10,12 +10,15 @@
       <div class="col col-md-offset-3 col-md-6">
         <nav class="panel panel-default">
           <div class="panel-heading">フォルダ削除の確認</div>
-              <p>フォルダを削除するとこのフォルダ内のタスクも消えます。<br>本当に削除しますか？</p>
-              <p>{{ $folder->title }}</p>
-              <form action="{{ route('folders.delete', ['folder' => $folder]) }}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn btn-danger">削除</button>
-              </form>
+              <p class="panel-contents">以下のフォルダを削除するとフォルダ内のタスクも消えます。<br>本当に削除しますか？</p>
+              <p class="panel-title">「  {{ $folder->title }}  」フォルダ</p>
+              <div class="panel-botton">
+                <form action="{{ route('folders.delete', ['folder' => $folder]) }}" method="POST" class="panel-contents">
+                      @csrf
+                      <button type="submit" class="btn btn-danger">削除</button>
+                </form>
+                <div class="panel-contents"><a href="{{ route('home') }}"><button class="btn btn-info">戻る</button></a></div>
+              </div>
               </div>
             </form>
           </div>

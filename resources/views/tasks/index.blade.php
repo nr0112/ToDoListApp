@@ -14,12 +14,9 @@
           <div class="list-group">
           <!-- コントローラーから渡されたデータを参照 -->
             @foreach($folders as $folder)
-            <!-- route関数の結果をhrefの値として出力(route関数はルーティングの設定からURLを作り出す関数) -->
-            <!-- ループしているフォルダデータのうち、閲覧されているフォルダのIDとID値が合致する場合のみactiveを出力 -->
             <div class="list-content">
               <div class="list-item item1">
-                <a href="{{ route('tasks.index', ['folder' => $folder->id]) }}" 
-                  class="list-group-item {{ $current_folder_id === $folder->id ? 'active' : '' }}">
+                <a href="{{ route('tasks.index', ['folder' => $folder->id]) }}" class="list-group-item {{ $current_folder_id === $folder->id ? 'active' : '' }}">
                   <!-- 変数の値の展開 -->
                   {{ $folder->title }}
                 </a>
@@ -43,49 +40,52 @@
       <div class="column col-md-8">
         <!-- ここにタスクが表示される -->
         <div class="panel panel-default">
-         <div class="panel-heading">タスク</div>
-         <div class="panel-body">
-           <div class="text-right">
-             <a href="{{ route('tasks.create', ['folder' => $current_folder_id]) }}" class="btn btn-default btn-block">
-               タスクを追加する
-             </a>
-           </div>
-         </div>
-         <table class="table">
-           <thead>
-           <tr>
-             <th>タイトル</th>
-             <th>状態</th>
-             <th>期限</th>
-             <th></th>
-           </tr>
-           </thead>
-           <tbody>
-             @foreach ($tasks as $task)
-               <tr>
-                 <td>{{ $task->title }}</td>
-                 <td>
-                   <span class="badge {{ $task->status_class }}">{{ $task->status_label }}</span>
-                 </td>
-                 <td>{{ $task->formatted_due_date }}</td>
-                 <!-- タスク編集ボタン -->
-                 <td>
-                   <a href="{{ route('tasks.edit', ['folder' => $task->folder_id, 'task' => $task->id]) }}">
-                    <button type="submit" class="btn btn-primary">編集</button>
-                   </a>
-                 </td>
-                 <!-- タスク削除ボタン -->
-                 <td>
-                 <form action="{{ route('tasks.delete', ['folder' => $task->folder_id, 'task' => $task->id]) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">削除</button>
-                 </form>
-                </td>
-               </tr>
-             @endforeach
-           </tbody>
-         </table>
+          <div class="panel-heading">タスク</div>
+          <div class="panel-body">
+            <div class="text-right">
+              <a href="{{ route('tasks.create', ['folder' => $current_folder_id]) }}" class="btn btn-default btn-block">タスクを追加する</a>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+            <tr>
+              <th>タイトル</th>
+              <th>経過</th>
+              <th>期限</th>
+              <th>残り日数</th>
+            </tr>
+            </thead>
+            <tbody>
+              @foreach ($tasks as $task)
+                <tr>
+                  <td><a href="{{ route('tasks.detailed', ['folder' => $task->folder_id, 'task' => $task->id]) }}" class="task-title">{{ $task->title }}</a></td>
+                  <td>
+                    <div class="task-status">
+                      @if($task->process_image == 'flower')
+                      <img src="{{ asset('img/flower.PNG') }}" class="process-img">
+                      @elseif($task->process_image == 'bud')
+                      <img src="{{ asset('img/bud.PNG') }}" class="process-img">
+                      @else
+                      <img src="{{ asset('img/seed.PNG') }}" class="process-img">
+                      @endif
+                    </div>
+                    <div class="task-status">
+                      <span class="badge {{ $task->status_class }}">{{ $task->status_label }}</span>
+                    </div>
+                  <td>{{ $task->formatted_due_date }}</td>
+                  <td>{{ $task->count_down }}</td>
+                  <td><a href="{{ route('tasks.edit', ['folder' => $task->folder_id, 'task' => $task->id]) }}"><button type="submit" class="btn btn-primary">編集</button></a></td>
+                  <td>
+                    <form action="{{ route('tasks.delete', ['folder' => $task->folder_id, 'task' => $task->id]) }}" method="POST">
+                      @csrf
+                      @method('POST')
+                      <button type="submit" class="btn btn-danger">削除</button>
+                    </form>
+                  </td>
+                </tr>
+              @endforeach
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

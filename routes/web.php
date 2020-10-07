@@ -20,9 +20,9 @@ Route::group(['middleware' => 'auth'], function() {
     // ホーム画面
     Route::get('/', 'HomeController@index')->name('home');
 
-    // ルートモデルバインディング
-    //　ミドルウェアを介して作成したポリシーを使用
-    // Folderモデル→FolderPolicyポリシーのviewメソッドが認可に使用される
+    //ルートモデルバインディング
+    //ミドルウェアを介して作成したポリシーを使用
+    //Folderモデル→FolderPolicyポリシーのviewメソッドが認可に使用される
     Route::group(['middleware' => 'can:view,folder'], function() {   
         Route::get('/folders/{folder}/tasks', 'TaskController@index')->name('tasks.index');
         
@@ -40,15 +40,16 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/folders/create', 'FolderController@showCreateForm')->name('folders.create');
     Route::post('/folders/create', 'FolderController@create');
     
+    Route::get('/folders/{folder}/edit', 'FolderController@showEditForm')->name('folders.edit');
+    Route::post('/folders/{folder}/edit', 'FolderController@edit');
+    
+    
+    Route::get('/folders/{folder}/delete', 'FolderController@showConfirmDestroy')->name('folders.delete');
+    Route::post('/folders/{folder}/delete', 'FolderController@destroy');
+
 });
 
-// 後で上のグループに入れる
-Route::get('/folders/{folder}/edit', 'FolderController@showEditForm')->name('folders.edit');
-Route::post('/folders/{folder}/edit', 'FolderController@edit');
-
-
-Route::get('/folders/{folder}/delete', 'FolderController@showConfirmDestroy')->name('folders.delete');
-Route::post('/folders/{folder}/delete', 'FolderController@destroy');
+Route::get('/folders/{folder}/tasks/{task}/detailed', 'TaskController@showDetailedlTask')->name('tasks.detailed');
 
 // 会員登録機能
 Auth::routes();

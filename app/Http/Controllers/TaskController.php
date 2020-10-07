@@ -23,16 +23,7 @@ class TaskController extends Controller
     //→URL中のIDに該当するフォルダデータがコントローラメソッドに渡される
     public function index(Folder $folder)
     {
-        // 全てのフォルダ取得
-        // $folders = Folder::all();
-        // 選ばれたフォルダを取得する
-        // $current_folder = Folder::find($id);
-
-        //　ユーザーのフォルダを取得
         $folders = Auth::user()->folders()->get();
-
-        // 選ばれたフォルダを取得：プライマリーキーのカラムを条件に、レコードを取得
-        // $current_folder = Folder::find($id);
 
         // 選ばれたフォルダに紐づくタスクを取得：クエリビルダー
         $tasks = $folder->tasks()->get();
@@ -73,6 +64,7 @@ class TaskController extends Controller
     $task = new Task();
     $task->title = $request->title;
     $task->due_date = $request->due_date;
+    $task->contents = $request->contents;
 
     // 選択したフォルダに紐づくタスクを作成している
     $folder->tasks()->save($task);
@@ -115,6 +107,7 @@ class TaskController extends Controller
         $task->title = $request->title;
         $task->status = $request->status;
         $task->due_date = $request->due_date;
+        $task->contents = $request->contents;
         $task->save();
 
         return redirect()->route('tasks.index', [
@@ -135,16 +128,6 @@ class TaskController extends Controller
         }
     }
 
-    // public function destroy(int $id, int $task_id, DeleteTask $request)
-    // {
-    //     $task = Task::find($task_id);
-
-    //     $task->delete();
-    //     return redirect()->route('tasks.index', [
-    //         'id' => $task->folder_id,
-    //     ]);
-    // }
-
     /**
      * タスク削除
      * @param Folder $folder
@@ -163,6 +146,17 @@ class TaskController extends Controller
         ]);
     }
 
-    
-
+    /**
+     * タスク内容
+     * @param Folder $folder
+     * @param Task $task
+     * @return \Illuminate\View\View
+     */
+    public function showDetailedlTask(Folder $folder, Task $task)
+    {
+        return view('tasks/detailed', [
+            'folder' => $task->folder_id,
+            'task' => $task,
+        ]);
+    }
 }
